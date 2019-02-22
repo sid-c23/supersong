@@ -12,15 +12,14 @@ class VoteController extends Controller
 			return view('vote.vote', compact('songs'));
 		}
 		public function getSongs() {
-			$numRec = count(Song::all());
-			$randNum = rand(1, $numRec);
-			$song1 = Song::find($randNum);
-			$numRec1 = count(Song::all());
-			$randNum1 = rand(1, $numRec1);
-			while($randNum1 === $randNum) {
-				$randNum1 = rand(1, $numRec1);
-			}
-			$song2 = Song::find($randNum1);
+			$song1 = Song::inRandomOrder()->first();
+			$song2 = Song::inRandomOrder()->where('id', '!=', $song1->id)->first();
+			// $numRec = count(Song::all());
+			// $randNum = rand(1, $numRec);
+			// $song1 = Song::find($randNum);
+			// $numRec1 = count(Song::all());
+			// $randNum1 = rand(1, $numRec1);
+			// $song2 = Song::find($randNum1);
 			return compact("song1", "song2");
 		}
 

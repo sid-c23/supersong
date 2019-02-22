@@ -24,4 +24,3 @@ Route::post('/updateElo', "VoteController@updateElo");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');

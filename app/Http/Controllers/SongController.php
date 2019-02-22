@@ -44,7 +44,7 @@ class SongController extends Controller
 				"artist" => $request['artist'],
 				"imageUrl" => $request['imageUrl']
 			]);
-			return redirect('/songs');
+			return redirect('/songs/create');
     }
 
     /**
