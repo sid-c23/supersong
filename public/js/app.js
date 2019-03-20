@@ -37830,7 +37830,10 @@ var render = function() {
     _vm._v(" "),
     _c("p", { staticClass: "lead" }, [_vm._v("by " + _vm._s(_vm.song.artist))]),
     _vm._v(" "),
-    _c("h6", [_vm._v(_vm._s(_vm.song.imageUrl))]),
+    _c("img", {
+      staticStyle: { "padding-bottom": "15px" },
+      attrs: { src: _vm.song.imageUrl, alt: "" }
+    }),
     _vm._v(" "),
     _c(
       "button",

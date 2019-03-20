@@ -17,9 +17,9 @@ class CreateSongsTable extends Migration
 						$table->increments('id');
 						$table->string('title');
 						$table->string('imageUrl')->nullable();
+						$table->string('filepath')->nullable();
 						$table->string('artist');
 						$table->integer('elo')->default(1600);
-						$table->unsignedInteger('numWins')->default(0);
             $table->timestamps();
         });
     }
